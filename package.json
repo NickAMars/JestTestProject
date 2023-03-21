@@ -1,0 +1,28 @@
+{
+  "name": "jesttestproject",
+  "version": "1.0.0",
+  "description": "Task with setting up a jest test for backend and front end applications to be run and view by professor",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --silent --coverage --maxWorkers=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickAMars/JestTestProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickAMars/JestTestProject/issues"
+  },
+  "homepage": "https://github.com/NickAMars/JestTestProject#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "4.8.4"
+  }
+}
