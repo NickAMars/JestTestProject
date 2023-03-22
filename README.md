@@ -1,3 +1,5 @@
+VSCODE recipes jest -- ```https://github.com/Microsoft/vscode-recipes/tree/master/debugging-jest-tests```
+
 Task with setting up a jest test for backend and front end applications to be run and view by professor..
 
 Had a warning telling me to work with typescript version 5.0.0 > when i am using ts-jest package
