@@ -37,7 +37,7 @@ describe('Utils test', ()=>{
             expect( ()=>{fn('')} ).toThrow();
             expect( ()=>{fn('')} ).toThrowError('Invalid arguments');
         })
-        fit('should throw error on invalid argument - try catch block', (done)=>{
+        it('should throw error on invalid argument - try catch block', (done)=>{
             try{
                const fn: Function = stringUtils.toUpperCase;
                 fn('');
