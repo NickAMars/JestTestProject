@@ -15,22 +15,27 @@ export class PasswordValidation{
     constructor(){}
     public checkPassword(password: string): CheckResult{
         const reasons: PasswordErrors[] = [];
-        let  valid:  boolean =  true;
+
+        this.checkForLength(password, reasons) 
+        this.checkForUpperCase(password, reasons)  
+        this.checkForLowerCase(password, reasons);
+        return {valid: reasons.length? false: true , reasons};
+    }
+    private checkForLength(password: string ,reasons: PasswordErrors[]): void {
         if(password && password.length < 8){
             reasons.push(PasswordErrors.SHORT);
-            valid = false;
         }
-        // check for uppercase
-        if(!password.split('').some(character=> character.charCodeAt(0) >= 65 && character.charCodeAt(0) <= 90 )){
-            reasons.push(PasswordErrors.NO_UPPER_CASE);
-            valid = false;
-        }
-        // check for lower case
-        if(!password.split('').some(character=> character.charCodeAt(0)>= 97 && character.charCodeAt(0) <= 122 )){
-            reasons.push(PasswordErrors.NO_LOWER_CASE);
-            valid = false;
-        }
-        return {valid, reasons};
     }
-
+    // check for uppercase
+    private checkForUpperCase(password: string ,reasons: PasswordErrors[]): void {
+        if(password &&!password.split('').some(character=> character.charCodeAt(0)>= 65 && character.charCodeAt(0) <= 90 )){
+            reasons.push(PasswordErrors.NO_UPPER_CASE);
+        }
+    }
+    // check for lower case
+    private checkForLowerCase(password: string ,reasons: PasswordErrors[]): void {
+        if(password &&!password.split('').some(character=> character.charCodeAt(0)>= 97 && character.charCodeAt(0) <= 122 )){
+            reasons.push(PasswordErrors.NO_LOWER_CASE);
+        }
+    }
 }
