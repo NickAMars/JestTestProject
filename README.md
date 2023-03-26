@@ -31,4 +31,5 @@ import * as OtherObject from '<file-location>'
 ## SpyOn 
 ```
 jest.SpyOn(object, method).mockImplementation(()=>{})
+jest.SpyOn(object, method).mockReturnValue(()=>{})
 ```
