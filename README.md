@@ -10,3 +10,18 @@ Had a warning telling me to work with typescript version 5.0.0 > when i am using
  
 ### adding typescript config file (tsconfig.json)
 <sub>ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.</sub>
+
+
+## Mocking modules 
+```
+jest.mock('<file-location>', ()=>({
+    ...jest.requireActual(), // gets the previous functionality
+    <method>: () => {return 100;} // override existing functionality
+}))
+import * as OtherObject from '<file-location>'
+```
+
+## SpyOn 
+```
+jest.SpyOn(object, method).mockImplementation(()=>{})
+```
