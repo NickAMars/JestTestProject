@@ -7,7 +7,7 @@ describe('PasswordValidation test suite', ()=>{
         passwordValidation = new PasswordValidation();
     })
 
-    fit('Should not have less than 8 chars', ()=>{
+    it('Should not have less than 8 chars', ()=>{
         const actual : CheckResult = passwordValidation.checkPassword('1234567');
         expect(actual.valid).toBeFalsy()
         expect(actual.reasons).toEqual(
